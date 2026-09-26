@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://di24j5rnejlvj"]
+
+[ext_resource type="Script" uid="uid://c521c742xuycx" path="res://Scripts/player.gd" id="1_qq84b"]
+[ext_resource type="Script" uid="uid://dpwvpy62g238n" path="res://Scripts/wall_movement.gd" id="2_bjpew"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4mssf"]
+radius = 0.35
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ixqw"]
+radius = 0.35
+height = 1.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ir4nge"]
+radius = 1.2
+
+[node name="PlayerSide" type="CharacterBody3D" unique_id=896234555]
+script = ExtResource("1_qq84b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=629773837]
+shape = SubResource("CapsuleShape3D_4mssf")
+
+[node name="Visual" type="Node3D" parent="." unique_id=848404979]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" unique_id=749399992]
+mesh = SubResource("CapsuleMesh_0ixqw")
+
+[node name="InteractionRange" type="Area3D" parent="." unique_id=106509616]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionRange" unique_id=397132976]
+shape = SubResource("SphereShape3D_ir4nge")
+
+[node name="WallMovement" type="Node" parent="." unique_id=918651871]
+script = ExtResource("2_bjpew")
+
+[node name="WallLeft" type="RayCast3D" parent="." unique_id=1435161916]
+target_position = Vector3(-0.5, 0, 0)
+
+[node name="WallRight" type="RayCast3D" parent="." unique_id=1919129760]
+target_position = Vector3(0.5, 0, 0)

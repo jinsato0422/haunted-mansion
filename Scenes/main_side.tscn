@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://u35iux1evwfo"]
 
-[ext_resource type="Script" uid="uid://cb8idit8seqwh" path="res://main_side.gd" id="1_8onmr"]
-[ext_resource type="PackedScene" uid="uid://di24j5rnejlvj" path="res://player_side.tscn" id="1_025dr"]
-[ext_resource type="Script" uid="uid://b2ru2smubu05c" path="res://side_camera.gd" id="2_k8rkt"]
-[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://treasure.tscn" id="3_k2iff"]
-[ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://ghost.tscn" id="5_vm33g"]
+[ext_resource type="Script" uid="uid://cb8idit8seqwh" path="res://Scripts/main_side.gd" id="1_0clfa"]
+[ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
+[ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
+[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t0jnk"]
 size = Vector3(20, 0.5, 2)
@@ -31,8 +30,10 @@ albedo_color = Color(0.6160945, 0.20251302, 0, 1)
 radius = 0.3
 
 [node name="MainSide" type="Node3D" unique_id=1572557826]
-script = ExtResource("1_8onmr")
-monster_scene = ExtResource("5_vm33g")
+script = ExtResource("1_0clfa")
+monster_scene = ExtResource("2_ucghm")
+
+[node name="Player" parent="." unique_id=896234555 instance=ExtResource("3_rltmn")]
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1963098860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
@@ -42,15 +43,6 @@ mesh = SubResource("BoxMesh_t0jnk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1405179920]
 shape = SubResource("BoxShape3D_vgng8")
-
-[node name="PlayerSide" parent="." unique_id=896234555 instance=ExtResource("1_025dr")]
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=376360719]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 18)
-projection = 1
-current = true
-size = 10.0
-script = ExtResource("2_k8rkt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
@@ -64,10 +56,10 @@ mesh = SubResource("BoxMesh_vgng8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform1" unique_id=1044125648]
 shape = SubResource("BoxShape3D_saj5s")
 
-[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("3_k2iff")]
+[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
-[node name="Treasure2" parent="." unique_id=510207290 instance=ExtResource("3_k2iff")]
+[node name="Treasure2" parent="." unique_id=510207290 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.1, 0)
 treasure_type = 1
 
@@ -75,7 +67,7 @@ treasure_type = 1
 material_override = SubResource("StandardMaterial3D_8onmr")
 mesh = SubResource("SphereMesh_vm33g")
 
-[node name="Treasure3" parent="." unique_id=298225106 instance=ExtResource("3_k2iff")]
+[node name="Treasure3" parent="." unique_id=298225106 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.1, 0)
 treasure_type = 2
 

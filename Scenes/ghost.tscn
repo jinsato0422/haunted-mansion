@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://byl4pywlkquac"]
 
-[ext_resource type="Script" uid="uid://wus6oksqyke1" path="res://ghost.gd" id="1_v5pp4"]
+[ext_resource type="Script" uid="uid://wus6oksqyke1" path="res://Scripts/ghost.gd" id="1_v5pp4"]
+[ext_resource type="Texture2D" uid="uid://byytfhetjtf3l" path="res://Assets/GhostPlaceholder.png" id="2_6attn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6attn"]
 albedo_color = Color(0.76435924, 0.4476487, 0.1129987, 1)
@@ -11,14 +12,30 @@ radius = 0.45
 [sub_resource type="SphereShape3D" id="SphereShape3D_v5pp4"]
 radius = 0.6
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_770x4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6attn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Ghost" type="Area3D" unique_id=265302351]
 script = ExtResource("1_v5pp4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816244765]
+visible = false
 material_override = SubResource("StandardMaterial3D_6attn")
 mesh = SubResource("SphereMesh_0tr3y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=529840103]
 shape = SubResource("SphereShape3D_v5pp4")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2020111451]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_770x4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

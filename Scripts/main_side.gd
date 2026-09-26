@@ -6,7 +6,7 @@ extends Node3D
 var score: int = 0
 var great_treasure_amount: int = 0
 
-@onready var player: SidePlayer = $PlayerSide
+@onready var player: CharacterBody3D = $Player
 @onready var score_label: Label = $HUD/ScoreLabel
 @onready var speed_label: Label = $HUD/SpeedLabel
 @onready var ghost_spawn: Marker3D = $GhostSpawn
@@ -14,7 +14,7 @@ var great_treasure_amount: int = 0
 func _ready() -> void:
 	update_hud()
 
-func update_hud() -> void:
+func update_hud() -> void: 
 	score_label.text = "Score: " + str(score)
 	speed_label.text = "Speed: %.2f" % player.run_speed
 
