@@ -1,7 +1,12 @@
+class_name SidePlayer
 extends CharacterBody3D
 
 # Handles all the basic player stuff - walking, jumping, dashing,
 # and interacting with things like doors or treasure.
+#
+# Named "SidePlayer" (not "Player") because treasure.gd and ghost.gd
+# already check "if body is SidePlayer" - keeping that name means we
+# don't have to touch those scripts.
 
 signal died
 
@@ -32,6 +37,9 @@ var is_dashing = false
 var is_dead = false
 var fixed_z_position = 0.0
 var start_position = Vector3.ZERO
+
+# main_side.gd reads this to show your current speed on the HUD.
+var run_speed = 0.0
 
 
 func _ready():
@@ -80,6 +88,9 @@ func _physics_process(delta):
 	var dash_top_speed = dash_speed * speed_factor * dash_multiplier
 	if dash_top_speed < normal_top_speed:
 		dash_top_speed = normal_top_speed
+
+	# Keep this updated so the HUD's speed label has something to show.
+	run_speed = normal_top_speed
 
 	# Figure out the speed we're aiming for and how fast to get there.
 	var target_speed = input_direction * normal_top_speed
@@ -141,6 +152,13 @@ func interact_with_nearest():
 
 	if nearest_area != null:
 		nearest_area.call("interact", self)
+
+
+# Called by main_side.gd whenever a great treasure is picked up.
+# "movement_limiter" plays the same role as our slowdown_per_treasure.
+func update_treasure_speed(great_treasure_amount, movement_limiter):
+	treasure_count = great_treasure_amount
+	slowdown_per_treasure = movement_limiter
 
 
 func teleport_to(destination):
