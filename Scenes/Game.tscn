@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 [node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
 
-[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 90706149) index="0" unique_id=112162706]
+[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 1857745869) index="0" unique_id=826501753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
