@@ -50,6 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, -0.34376216)
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
 
+[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -0.6623316)
+treasure_type = null
+
 [node name="Treasures" type="Node3D" parent="." unique_id=850540396]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=361460300]
@@ -207,8 +211,5 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_dahhg")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_3so38")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3cx6b")
 text = "Play"
-
-[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -0.6623316)
 
 [editable path="SM_Hall_8M2"]

@@ -94,3 +94,6 @@ func spawn_ghost() -> void:
 	add_child(ghost)
 	ghost.global_position = ghost_spawn.global_position
 	ghost.target = player
+
+func reset():
+	pass
