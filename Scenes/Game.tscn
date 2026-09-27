@@ -4,13 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
 [ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
 [ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
-
 [ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Scenes/sm_hall_8m_Green.tscn" id="5_ucghm"]
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 [ext_resource type="PackedScene" uid="uid://8k3ghqayanon" path="res://Scenes/sm_stairs_up.tscn" id="8_2irst"]
 [ext_resource type="PackedScene" uid="uid://dqka400b23bgb" path="res://Scenes/sm_hall_2m.tscn" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://cyjv5a8kgi3s3" path="res://Scenes/sm_stairs_down.tscn" id="9_bf53h"]
-[ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
+[ext_resource type="Texture2D" uid="uid://cpf5wogcd0isp" path="res://Assets/UI/Logo_SC.png" id="9_dahhg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_track"]
 bg_color = Color(0.09, 0.07, 0.12, 0.95)
@@ -107,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 [node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
 
-[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 90706149) index="0" unique_id=112162706]
+[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 1857745869) index="0" unique_id=826501753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
@@ -169,6 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 7, -1)
 
 [node name="SM_Hall_8M_Green5" parent="." unique_id=1119351235 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 40, -17, -1)
+
 [node name="StartScreen" type="CanvasLayer" parent="." unique_id=1006084496]
 
 [node name="ColorRect" type="ColorRect" parent="StartScreen" unique_id=1264442752]
@@ -193,7 +193,7 @@ layout_mode = 2
 [node name="Logo" type="TextureRect" parent="StartScreen/ColorRect/CenterContainer/VBoxContainer" unique_id=865861047]
 custom_minimum_size = Vector2(800, 400)
 layout_mode = 2
-texture = ExtResource("8_2irst")
+texture = ExtResource("9_dahhg")
 expand_mode = 1
 stretch_mode = 5
 
