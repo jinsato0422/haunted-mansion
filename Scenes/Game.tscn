@@ -1,34 +1,31 @@
 [gd_scene format=3 uid="uid://u35iux1evwfo"]
 
-[ext_resource type="Script" uid="uid://cb8idit8seqwh" path="res://Scripts/main_side.gd" id="1_7lihs"]
-[ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_fgofq"]
-[ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_2irst"]
-[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://treasure.tscn" id="4_bf53h"]
-[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_collider.tscn" id="5_71axn"]
-[ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="6_dahhg"]
+[ext_resource type="Script" uid="uid://cb8idit8seqwh" path="res://Scripts/main_side.gd" id="1_0clfa"]
+[ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
+[ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
+[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://treasure.tscn" id="4_yfthy"]
+[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_collider.tscn" id="5_ucghm"]
+[ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 
-[node name="Game" type="Node3D" unique_id=1572557826]
-script = ExtResource("1_7lihs")
-monster_scene = ExtResource("2_fgofq")
+[node name="MainSide" type="Node3D" unique_id=1572557826]
+script = ExtResource("1_0clfa")
+monster_scene = ExtResource("2_ucghm")
 
-[node name="Player" parent="." unique_id=896234555 instance=ExtResource("3_2irst")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4313011, 0)
+[node name="Player" parent="." unique_id=896234555 instance=ExtResource("3_rltmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
 
-[node name="Treasure" type="Node3D" parent="." unique_id=145513409]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4313011, 0)
+[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
-[node name="Treasure" parent="Treasure" unique_id=2056213325 instance=ExtResource("4_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.43130112, -0.35237122)
-
-[node name="Treasure2" parent="Treasure" unique_id=510207290 instance=ExtResource("4_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.6686988, -0.35)
+[node name="Treasure2" parent="." unique_id=510207290 instance=ExtResource("4_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.1, 0)
 treasure_type = 1
 
-[node name="Treasure3" parent="Treasure" unique_id=298225106 instance=ExtResource("4_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.312439, 7.8614044, -0.35)
+[node name="Treasure3" parent="." unique_id=298225106 instance=ExtResource("4_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.1, 0)
 treasure_type = 2
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=361460300]
@@ -50,33 +47,34 @@ text = "Speed: 5"
 [node name="GhostSpawn" type="Marker3D" parent="." unique_id=986402798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 
-[node name="SM_Hall_8M" parent="." unique_id=2042900114 instance=ExtResource("5_71axn")]
+[node name="SM_Hall_8M" parent="." unique_id=2042900114 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 
-[node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_71axn")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, -1)
+[node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
 
-[node name="Light" parent="." unique_id=1034226516 instance=ExtResource("6_dahhg")]
+[node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.0266151, 1.4965367)
 
-[node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_71axn")]
+[node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="SM_Hall_8M4" parent="." unique_id=1617980209 instance=ExtResource("5_71axn")]
+[node name="SM_Hall_8M4" parent="." unique_id=1617980209 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
 
-[node name="SM_Hall_8M5" parent="." unique_id=570333797 instance=ExtResource("5_71axn")]
+[node name="SM_Hall_8M5" parent="." unique_id=570333797 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3, -1)
 
-[node name="Light2" parent="." unique_id=440837327 instance=ExtResource("6_dahhg")]
+[node name="Light2" parent="." unique_id=440837327 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)
 
-[node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("6_dahhg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 2)
+[node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 3)
 
-[connection signal="collected" from="Treasure/Treasure" to="." method="_on_treasure_collected"]
-[connection signal="collected" from="Treasure/Treasure2" to="." method="_on_treasure_collected"]
-[connection signal="collected" from="Treasure/Treasure3" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Treasure" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Treasure2" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Treasure3" to="." method="_on_treasure_collected"]
 
-[editable path="Treasure/Treasure2"]
-[editable path="Treasure/Treasure3"]
+[editable path="Treasure2"]
+[editable path="Treasure3"]
+[editable path="SM_Hall_8M2"]

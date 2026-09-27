@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsgmxgg8gjaw1"]
 
-[ext_resource type="PackedScene" uid="uid://cve3put0p8dpo" path="res://Assets/3D/SM_Hall_2M (1).fbx" id="1_0xh5t"]
+[ext_resource type="PackedScene" uid="uid://cve3put0p8dpo" path="res://Assets/3D/SM_Hall_2M.fbx" id="1_0xh5t"]
 [ext_resource type="Material" uid="uid://bbhwlk4wp81kw" path="res://Assets/Materials/M_hall.tres" id="2_2cuel"]
 
 [node name="SM_Hall_2M (1)" unique_id=794256021 instance=ExtResource("1_0xh5t")]
