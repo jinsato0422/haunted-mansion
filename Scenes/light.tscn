@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cambo0qm4fntl"]
+
+[node name="Light" type="Node3D" unique_id=1034226516]
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=785963024]
+light_energy = 7.02

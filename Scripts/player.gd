@@ -148,6 +148,8 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("interact"):
 		interact_with_nearest()
+		
+	check_if_out_of_bounds()
 
 
 func apply_gravity(delta: float) -> void:
@@ -160,6 +162,9 @@ func apply_gravity(delta: float) -> void:
 	elif velocity.y < 0.0:
 		velocity.y = 0.0
 
+func check_if_out_of_bounds():
+	if abs(position.y) >= 300.0 or abs(position.x) >= 300.0:
+		reset_player()
 
 # STATE MACHINE
 
@@ -194,7 +199,7 @@ func idle_state() -> void:
 
 	if direction != 0.0:
 
-		if Input.is_action_pressed("dash"):
+		if Input.is_action_pressed("run"):
 			change_state(STATE.RUN)
 		else:
 			change_state(STATE.WALK)
@@ -212,7 +217,7 @@ func walk_state() -> void:
 
 	move_horizontal(get_walk_speed())
 
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_pressed("run"):
 		change_state(STATE.RUN)
 		return
 
@@ -235,7 +240,7 @@ func run_state() -> void:
 
 	move_horizontal(get_run_speed())
 
-	if not Input.is_action_pressed("dash"):
+	if not Input.is_action_pressed("run"):
 		change_state(STATE.WALK)
 		return
 
@@ -250,13 +255,21 @@ func run_state() -> void:
 
 func jump_state(delta: float) -> void:
 	is_wall_sliding = check_wall_slide()
+	
+	
 
 	if is_wall_sliding:
+		animated_sprite.play("wall_slide")
 		if velocity.y < -wall_slide_fall_speed:
 			velocity.y = -wall_slide_fall_speed
 
 		if Input.is_action_just_pressed("jump"):
 			perform_wall_jump()
+	else:
+		if velocity.y < 0:
+			animated_sprite.play("falling")
+		else:
+			animated_sprite.play("rising")
 
 	# Variable-height jump.
 	jump_timer -= delta
@@ -285,6 +298,8 @@ func slide_state(delta):
 	if not is_on_floor():
 		change_state(STATE.JUMP)
 		return
+		
+	''' THIS STUFF IS FOR SLDING DOWN SLOPES WILL IMPLEMENT LATER '''
 		
 	'if frame >= 28:
 		if check_jump():
@@ -356,7 +371,7 @@ func move_air(delta: float) -> void:
 		var acceleration: float
 		var top_speed: float
 
-		if Input.is_action_pressed("dash"):
+		if Input.is_action_pressed("run"):
 			acceleration = large_air_acceleration
 			top_speed = max_air_speed
 		else:
@@ -386,6 +401,17 @@ func move_air(delta: float) -> void:
 
 func check_wall_slide() -> bool:
 	wall_jump_direction = 0
+	if upper_right.is_colliding():
+		print("UR hit: ", upper_right.get_collider())
+
+	if lower_right.is_colliding():
+		print("LR hit: ", lower_right.get_collider())
+
+	if upper_left.is_colliding():
+		print("UL hit: ", upper_left.get_collider())
+
+	if lower_left.is_colliding():
+		print("LL hit: ", lower_left.get_collider())
 
 	# Right wall -> jump left.
 	if upper_right.is_colliding() or lower_right.is_colliding():

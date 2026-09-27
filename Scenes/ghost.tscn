@@ -36,6 +36,7 @@ shape = SubResource("SphereShape3D_v5pp4")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2020111451]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_770x4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
