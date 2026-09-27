@@ -16,13 +16,39 @@ var load_tween: Tween
 @onready var load_bar: ProgressBar = $HUD/LoadPanel/Rows/LoadBar
 @onready var ghost_spawn: Marker3D = $GhostSpawn
 
+#Start Screen
+@onready var start_screen: CanvasLayer = $StartScreen
+@onready var play_button: Button = $StartScreen/ColorRect/CenterContainer/VBoxContainer/StartButton
+
+var game_started := false
+
 func _ready() -> void:
+  get_tree().paused = true
+	start_screen.process_mode = Node.PROCESS_MODE_ALWAYS
+	play_button.pressed.connect(_on_play_pressed)
+	play_button.grab_focus()
+  
 	register_treasures(self)
 	# Whenever the player gains or loses load, refresh the bar.
 	player.load_changed.connect(update_hud)
 	load_bar.max_value = player.carry_capacity
 	load_bar.value = player.carried_load
+
 	update_hud()
+	
+func _on_play_pressed() -> void:
+	play_button.disabled = true
+
+	var flash := create_tween()
+	flash.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	flash.tween_property(play_button, "modulate", Color("#D64A4A"), 0.15)
+	flash.tween_property(play_button, "modulate", Color.WHITE, 0.15)
+	flash.tween_property(play_button, "modulate", Color("#D64A4A"), 0.15)
+	flash.tween_property(play_button, "modulate", Color.WHITE, 0.15)
+
+	await flash.finished
+	start_screen.hide()
+	get_tree().paused = false
 
 func register_treasures(node: Node) -> void:
 	# Hook up the treasures placed in the level, including ones inside other nodes.

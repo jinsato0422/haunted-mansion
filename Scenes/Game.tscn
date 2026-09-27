@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
 [ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
 [ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
+
 [ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Scenes/sm_hall_8m_Green.tscn" id="5_ucghm"]
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 [ext_resource type="PackedScene" uid="uid://8k3ghqayanon" path="res://Scenes/sm_stairs_up.tscn" id="8_2irst"]
 [ext_resource type="PackedScene" uid="uid://dqka400b23bgb" path="res://Scenes/sm_hall_2m.tscn" id="9_71axn"]
 [ext_resource type="PackedScene" uid="uid://cyjv5a8kgi3s3" path="res://Scenes/sm_stairs_down.tscn" id="9_bf53h"]
+[ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_track"]
 bg_color = Color(0.09, 0.07, 0.12, 0.95)
@@ -28,6 +30,16 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf53h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_71axn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dahhg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3so38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3cx6b"]
 
 [node name="MainSide" type="Node3D" unique_id=1572557826]
 script = ExtResource("1_0clfa")
@@ -166,6 +178,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 7, -1)
 
 [node name="SM_Hall_8M_Green5" parent="." unique_id=1119351235 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 40, -17, -1)
+[node name="StartScreen" type="CanvasLayer" parent="." unique_id=1006084496]
+
+[node name="ColorRect" type="ColorRect" parent="StartScreen" unique_id=1264442752]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.0627451, 0.09411765, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="StartScreen/ColorRect" unique_id=42090523]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen/ColorRect/CenterContainer" unique_id=2062613687]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="StartScreen/ColorRect/CenterContainer/VBoxContainer" unique_id=865861047]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+texture = ExtResource("8_2irst")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="StartScreen/ColorRect/CenterContainer/VBoxContainer" unique_id=2112060547]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.92941177, 0.92156863, 1)
+theme_override_colors/font_hover_color = Color(0.8392157, 0.2901961, 0.2901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bf53h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_71axn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dahhg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3so38")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3cx6b")
+text = "Play"
 
 [connection signal="collected" from="Minor Treasure" to="." method="_on_treasure_collected"]
 [connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]
