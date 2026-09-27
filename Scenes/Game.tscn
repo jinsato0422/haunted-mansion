@@ -53,8 +53,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 [node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
 
+[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 90706149) index="0" unique_id=112162706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.0266151, 1.4965367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.5018725, -0.89392495)
 
 [node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -66,10 +69,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3, -1)
 
 [node name="Light2" parent="." unique_id=440837327 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.3747528, -0.95481086)
 
 [node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.681894, 7.8465567, -0.84413815)
 
 [connection signal="collected" from="Minor Treasure" to="." method="_on_treasure_collected"]
 [connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]
