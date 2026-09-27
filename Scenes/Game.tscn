@@ -17,14 +17,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, -0.34376216)
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
 
-[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
+[node name="Minor Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
 
-[node name="Treasure2" parent="." unique_id=510207290 instance=ExtResource("4_yfthy")]
+[node name="Great Treasure" parent="." unique_id=510207290 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.1, 0)
 treasure_type = 1
 
-[node name="Treasure3" parent="." unique_id=298225106 instance=ExtResource("4_yfthy")]
+[node name="Cursed Treasure" parent="." unique_id=298225106 instance=ExtResource("4_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.1, 0)
 treasure_type = 2
 
@@ -74,10 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.3747528, -0.95481086)
 [node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.681894, 7.8465567, -0.84413815)
 
-[connection signal="collected" from="Treasure" to="." method="_on_treasure_collected"]
-[connection signal="collected" from="Treasure2" to="." method="_on_treasure_collected"]
-[connection signal="collected" from="Treasure3" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Minor Treasure" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]
+[connection signal="collected" from="Cursed Treasure" to="." method="_on_treasure_collected"]
 
-[editable path="Treasure2"]
-[editable path="Treasure3"]
+[editable path="Great Treasure"]
+[editable path="Cursed Treasure"]
 [editable path="SM_Hall_8M2"]
