@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cve3put0p8dpo"
-path="res://.godot/imported/SM_Hall_2M (1).fbx-2a6fb401f11363a52483c4df6ed01d60.scn"
+path="res://.godot/imported/SM_Hall_2M.fbx-1384875c2da65bc99f420b8a67e3a7ef.scn"
 
 [deps]
 
-source_file="res://Assets/3D/SM_Hall_2M (1).fbx"
-dest_files=["res://.godot/imported/SM_Hall_2M (1).fbx-2a6fb401f11363a52483c4df6ed01d60.scn"]
+source_file="res://Assets/3D/SM_Hall_2M.fbx"
+dest_files=["res://.godot/imported/SM_Hall_2M.fbx-1384875c2da65bc99f420b8a67e3a7ef.scn"]
 
 [params]
 

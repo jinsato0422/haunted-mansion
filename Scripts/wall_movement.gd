@@ -25,6 +25,9 @@ func reset():
 # Runs every physics frame from the player script.
 # Returns true if we took over the player's movement this frame.
 func apply_motion(player, input_direction, delta):
+	print("WALL MOVEMENT RUNNING")
+	if Input.is_action_pressed("grab"):
+		print("GRAB PRESSED | on floor: ", player.is_on_floor())
 	is_grabbing = false
 	is_sliding = false
 
@@ -45,7 +48,15 @@ func apply_motion(player, input_direction, delta):
 	var right_ray = player.get_node("WallRight")
 	left_ray.force_raycast_update()
 	right_ray.force_raycast_update()
-
+	
+	if Input.is_action_pressed("grab"):
+		print("LEFT: ", left_ray.is_colliding(),
+		" | RIGHT: ", right_ray.is_colliding())
+	if left_ray.is_colliding():
+		print("Left normal: ", left_ray.get_collision_normal())
+	if right_ray.is_colliding():
+		print("Right normal: ", right_ray.get_collision_normal())
+		
 	# Check whichever side we're pressing toward first - if both rays
 	# happen to be touching a wall, we want the one that actually matters.
 	var first_ray = left_ray

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqka400b23bgb"]
 
-[ext_resource type="PackedScene" uid="uid://8ckobpkkj1ua" path="res://Assets/3D/SM_Hall_2M.fbx" id="1_j1elx"]
+[ext_resource type="PackedScene" uid="uid://cve3put0p8dpo" path="res://Assets/3D/SM_Hall_2M.fbx" id="1_j1elx"]
 
 [node name="SM_Hall_2M" unique_id=935304000 instance=ExtResource("1_j1elx")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
