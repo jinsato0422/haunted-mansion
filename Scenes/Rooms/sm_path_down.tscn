@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c0fhbb6yycipc"]
+
+[ext_resource type="PackedScene" uid="uid://bqx0x0ysf3jkr" path="res://Assets/3D/SM_PathDown.fbx" id="1_jg87s"]
+
+[node name="SM_PathDown" unique_id=398118717 instance=ExtResource("1_jg87s")]
+
+[node name="SM_PathDown" parent="VertPaths_grp" parent_id_path=PackedInt32Array(190584470) index="0" unique_id=980226133]
+layers = 3

@@ -23,7 +23,7 @@ var load_tween: Tween
 var game_started := false
 
 func _ready() -> void:
-  get_tree().paused = true
+	get_tree().paused = true
 	start_screen.process_mode = Node.PROCESS_MODE_ALWAYS
 	play_button.pressed.connect(_on_play_pressed)
 	play_button.grab_focus()

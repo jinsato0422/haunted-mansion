@@ -4,13 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
 [ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
 [ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
-
-[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Scenes/sm_hall_8m_Green.tscn" id="5_ucghm"]
+[ext_resource type="PackedScene" uid="uid://dykunsw7l1rqr" path="res://Scenes/Rooms/sm_path_up.tscn" id="7_71axn"]
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
-[ext_resource type="PackedScene" uid="uid://8k3ghqayanon" path="res://Scenes/sm_stairs_up.tscn" id="8_2irst"]
-[ext_resource type="PackedScene" uid="uid://dqka400b23bgb" path="res://Scenes/sm_hall_2m.tscn" id="9_71axn"]
-[ext_resource type="PackedScene" uid="uid://cyjv5a8kgi3s3" path="res://Scenes/sm_stairs_down.tscn" id="9_bf53h"]
-[ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://q2eysjrgo3ru" path="res://Scenes/Rooms/sm_path_vert_2m.tscn" id="8_dahhg"]
+[ext_resource type="PackedScene" uid="uid://b62ds3jbwcqdp" path="res://Scenes/Rooms/sm_stairs_down.tscn" id="9_3so38"]
+[ext_resource type="PackedScene" uid="uid://xll46rx44rj" path="res://Scenes/Rooms/sm_stairs_up.tscn" id="10_3cx6b"]
+[ext_resource type="PackedScene" uid="uid://c0fhbb6yycipc" path="res://Scenes/Rooms/sm_path_down.tscn" id="10_71axn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_track"]
 bg_color = Color(0.09, 0.07, 0.12, 0.95)
@@ -105,74 +104,21 @@ show_percentage = false
 [node name="GhostSpawn" type="Marker3D" parent="." unique_id=986402798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
 
-[node name="SM_Hall_8M" parent="." unique_id=2042900114 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
-
-[node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
-
-[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 90706149) index="0" unique_id=112162706]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.1391528, -0.89392495)
-
-[node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-
-[node name="SM_Hall_8M4" parent="." unique_id=1617980209 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
-
-[node name="SM_Hall_8M5" parent="." unique_id=570333797 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0408096, 5.3642035, -0.89392495)
 
 [node name="Light2" parent="." unique_id=440837327 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.0887718, -0.95481086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.132824, 9.89334, -0.95481086)
 
 [node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.681894, 7.8465567, -0.84413815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.142715, 5.971079, -0.84413815)
 
 [node name="Light4" parent="." unique_id=1864372025 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.780283, 2.1782231, -1.0223402)
-
-[node name="SM_Hall_8M_Green" parent="." unique_id=1982856573 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9629135, 8.314936, -1.0223402)
 
 [node name="Light5" parent="." unique_id=131363763 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.0593987, -0.9576053)
 
-[node name="SM_StairsUp" parent="." unique_id=1450918850 instance=ExtResource("8_2irst")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -1)
-
-[node name="SM_StairsDown" parent="." unique_id=2114561716 instance=ExtResource("9_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 4, -1)
-
-[node name="SM_Hall_2M" parent="." unique_id=935304000 instance=ExtResource("9_71axn")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 0, -1)
-
-[node name="SM_Hall_2M2" parent="." unique_id=1163645996 instance=ExtResource("9_71axn")]
-transform = Transform3D(-8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 0, 0, 2, 19, -2, -1)
-
-[node name="SM_Hall_2M3" parent="." unique_id=1097058156 instance=ExtResource("9_71axn")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 19, -5, -1)
-
-[node name="SM_StairsDown2" parent="." unique_id=1187336053 instance=ExtResource("9_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -5, -1)
-
-[node name="SM_Hall_8M_Green2" parent="." unique_id=183296618 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 11, -1)
-
-[node name="SM_StairsDown3" parent="." unique_id=1099544415 instance=ExtResource("9_bf53h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 11, -1)
-
-[node name="SM_Hall_8M_Green3" parent="." unique_id=789072375 instance=ExtResource("5_ucghm")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 46, 10, -1)
-
-[node name="SM_Hall_8M_Green4" parent="." unique_id=1811111774 instance=ExtResource("5_ucghm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 7, -1)
-
-[node name="SM_Hall_8M_Green5" parent="." unique_id=1119351235 instance=ExtResource("5_ucghm")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 40, -17, -1)
 [node name="StartScreen" type="CanvasLayer" parent="." unique_id=1006084496]
 
 [node name="ColorRect" type="ColorRect" parent="StartScreen" unique_id=1264442752]
@@ -197,7 +143,6 @@ layout_mode = 2
 [node name="Logo" type="TextureRect" parent="StartScreen/ColorRect/CenterContainer/VBoxContainer" unique_id=865861047]
 custom_minimum_size = Vector2(800, 400)
 layout_mode = 2
-texture = ExtResource("8_2irst")
 expand_mode = 1
 stretch_mode = 5
 
@@ -212,4 +157,23 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_3so38")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3cx6b")
 text = "Play"
 
-[editable path="SM_Hall_8M2"]
+[node name="SM_PathDown" parent="." unique_id=398118717 instance=ExtResource("10_71axn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -1)
+
+[node name="SM_PathUp" parent="." unique_id=1398607710 instance=ExtResource("7_71axn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -1)
+
+[node name="SM_PathVert2M" parent="." unique_id=1220188024 instance=ExtResource("8_dahhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -1)
+
+[node name="SM_StairsDown4" parent="." unique_id=1169847532 instance=ExtResource("9_3so38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 8, -1)
+
+[node name="SM_StairsUp" parent="." unique_id=1652143790 instance=ExtResource("10_3cx6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 4, -1)
+
+[node name="SM_PathDown2" parent="." unique_id=1285976430 instance=ExtResource("10_71axn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 8, -1)
+
+[node name="SM_PathUp2" parent="." unique_id=1974381061 instance=ExtResource("7_71axn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -1)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dykunsw7l1rqr"]
+
+[ext_resource type="PackedScene" uid="uid://nwamff5iffwi" path="res://Assets/3D/SM_PathUp.fbx" id="1_hbiiv"]
+
+[node name="SM_PathUp" unique_id=1398607710 instance=ExtResource("1_hbiiv")]

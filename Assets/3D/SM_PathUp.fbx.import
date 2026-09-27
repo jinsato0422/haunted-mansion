@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bc387jdqn72le"
-path="res://.godot/imported/SM_StairsDown.fbx-46be08465e8e7d9dd974ed3842e4d1cc.scn"
+uid="uid://nwamff5iffwi"
+path="res://.godot/imported/SM_PathUp.fbx-1b6815cc64b90c6f986686b3b035a091.scn"
 
 [deps]
 
-source_file="res://Assets/3D/SM_StairsDown.fbx"
-dest_files=["res://.godot/imported/SM_StairsDown.fbx-46be08465e8e7d9dd974ed3842e4d1cc.scn"]
+source_file="res://Assets/3D/SM_PathUp.fbx"
+dest_files=["res://.godot/imported/SM_PathUp.fbx-1b6815cc64b90c6f986686b3b035a091.scn"]
 
 [params]
 
@@ -48,7 +48,7 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:Stairs_grp/SM_StairsDown": {
+"PATH:VertPaths_grp/SM_PathUP": {
 "generate/physics": true
 }
 }
