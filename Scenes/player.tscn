@@ -210,7 +210,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"slide",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,12 +286,12 @@ monitorable = false
 shape = SubResource("SphereShape3D_ir4nge")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=718450221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06767738, 0)
 no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_770x4")
-animation = &"falling"
+animation = &"slide"
 autoplay = "idle"
-frame_progress = 0.22309789
+frame = 2
+frame_progress = 1.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1823546937]
 transform = Transform3D(1, 0, 0, 0, 0.97199607, 0.23499715, 0, -0.23499715, 0.97199607, 0, 1.7359571, 6.488817)

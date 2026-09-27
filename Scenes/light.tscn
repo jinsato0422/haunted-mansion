@@ -8,5 +8,5 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.54951406, 0.23313409)
 light_energy = 7.02
 
-[node name="SM_WallLight" parent="." unique_id=1976746658 instance=ExtResource("1_veqsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0353655, -2.150892, -0.017233372)
+[node name="SM_WallLight" parent="." unique_id=1659775570 instance=ExtResource("1_veqsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0175085, -2.0259929, 0)

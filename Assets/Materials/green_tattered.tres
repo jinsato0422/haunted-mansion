@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6o4jim0xejx8"]
+
+[ext_resource type="Texture2D" uid="uid://n1tkrp1vkeut" path="res://Assets/Materials/TrimSheet_Low_openPBR_shader1_BaseColor.png" id="1_ios0g"]
+
+[resource]
+albedo_texture = ExtResource("1_ios0g")
