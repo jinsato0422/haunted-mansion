@@ -11,8 +11,32 @@ var great_treasure_amount: int = 0
 @onready var speed_label: Label = $HUD/SpeedLabel
 @onready var ghost_spawn: Marker3D = $GhostSpawn
 
+#Start Screen
+@onready var start_screen: CanvasLayer = $StartScreen
+@onready var play_button: Button = $StartScreen/ColorRect/CenterContainer/VBoxContainer/StartButton
+
+var game_started := false
+
 func _ready() -> void:
+	get_tree().paused = true
+	start_screen.process_mode = Node.PROCESS_MODE_ALWAYS
+	play_button.pressed.connect(_on_play_pressed)
+	play_button.grab_focus()
 	update_hud()
+	
+func _on_play_pressed() -> void:
+	play_button.disabled = true
+
+	var flash := create_tween()
+	flash.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	flash.tween_property(play_button, "modulate", Color("#D64A4A"), 0.15)
+	flash.tween_property(play_button, "modulate", Color.WHITE, 0.15)
+	flash.tween_property(play_button, "modulate", Color("#D64A4A"), 0.15)
+	flash.tween_property(play_button, "modulate", Color.WHITE, 0.15)
+
+	await flash.finished
+	start_screen.hide()
+	get_tree().paused = false
 
 func update_hud() -> void: 
 	score_label.text = "Score: " + str(score)
