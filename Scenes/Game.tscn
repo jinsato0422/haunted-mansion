@@ -58,7 +58,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.5018725, -0.89392495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.1391528, -0.89392495)
 
 [node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3, -1)
 
 [node name="Light2" parent="." unique_id=440837327 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.3747528, -0.95481086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.0887718, -0.95481086)
 
 [node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.681894, 7.8465567, -0.84413815)
@@ -80,6 +80,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.004677, 0, -1.0370255)
 
 [node name="Light4" parent="." unique_id=1864372025 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.780283, 2.1782231, -1.0223402)
+
+[node name="SM_Hall_8M_Green" parent="." unique_id=1982856573 instance=ExtResource("5_ucghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -1)
+
+[node name="Light5" parent="." unique_id=131363763 instance=ExtResource("7_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.0593987, -0.9576053)
 
 [connection signal="collected" from="Minor Treasure" to="." method="_on_treasure_collected"]
 [connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]

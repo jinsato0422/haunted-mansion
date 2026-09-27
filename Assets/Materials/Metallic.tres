@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b68t6ggtxiw4o"]
+
+[ext_resource type="Texture2D" uid="uid://dst4glioamcge" path="res://Assets/Materials/TrimSheet_Low_openPBR_shader1_Metallic.png" id="1_3pir2"]
+
+[resource]
+metallic = 1.0
+metallic_texture = ExtResource("1_3pir2")
