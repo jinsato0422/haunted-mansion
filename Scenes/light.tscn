@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://cambo0qm4fntl"]
 
+[ext_resource type="PackedScene" uid="uid://d2lug08s13bk7" path="res://Assets/3D/SM_WallLight.fbx" id="1_veqsg"]
+
 [node name="Light" type="Node3D" unique_id=1034226516]
 
 [node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=785963024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.54951406, 0.23313409)
 light_energy = 7.02
+
+[node name="SM_WallLight" parent="." unique_id=1976746658 instance=ExtResource("1_veqsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0353655, -2.150892, -0.017233372)
