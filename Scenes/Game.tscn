@@ -3,14 +3,9 @@
 [ext_resource type="Script" uid="uid://cb8idit8seqwh" path="res://Scripts/main_side.gd" id="1_0clfa"]
 [ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
 [ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://treasure.tscn" id="4_yfthy"]
+[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
 [ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_Green.tscn" id="5_ucghm"]
 [ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
-=======
-[ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
-[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_collider.tscn" id="5_ucghm"]
->>>>>>> 6d9108421742d8ddcc0354aab934f33a8ed3ffff
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 
 [node name="MainSide" type="Node3D" unique_id=1572557826]
@@ -59,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
 [node name="SM_Hall_8M2" parent="." unique_id=663008911 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 3, 0)
 
-[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 1857745869) index="0" unique_id=826501753]
+[node name="SM_Hall_8M" parent="SM_Hall_8M2/Hall_grp" parent_id_path=PackedInt32Array(663008911, 90706149) index="0" unique_id=112162706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]

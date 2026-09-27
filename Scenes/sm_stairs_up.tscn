@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://8k3ghqayanon"]
+
+[ext_resource type="PackedScene" uid="uid://bavcs2ssrpxuk" path="res://Assets/3D/SM_StairsUp.fbx" id="1_fukpf"]
+[ext_resource type="Material" uid="uid://c6o4jim0xejx8" path="res://Assets/Materials/green_tattered.tres" id="2_wyige"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twbhu"]
+size = Vector3(2.006836, 0.39746094, 1.8745117)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbi34"]
+size = Vector3(2.0419922, 0.30285645, 2.3862915)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ri3uv"]
+size = Vector3(12.551239, 0.1751709, 2.386963)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isik4"]
+size = Vector3(2.1542969, 0.16625977, 2.3466187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sss74"]
+size = Vector3(12.639313, 0.2836914, 1.6505127)
+
+[node name="SM_StairsUp" unique_id=1450918850 instance=ExtResource("1_fukpf")]
+
+[node name="SM_StairsUp" parent="Stairs_grp" parent_id_path=PackedInt32Array(1723062415) index="0" unique_id=26722126]
+material_override = ExtResource("2_wyige")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Stairs_grp/SM_StairsUp" index="0" unique_id=1068223187]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 8.023719, 7.571565, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_grp/SM_StairsUp/StaticBody3D5" index="0" unique_id=956088572]
+transform = Transform3D(0.99998665, 0, 0, 0, 0.99998665, 0, 0, 0, 1, 7.034446, -0.6902442, 0.3041973)
+shape = SubResource("BoxShape3D_twbhu")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Stairs_grp/SM_StairsUp" index="1" unique_id=1022114819]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_grp/SM_StairsUp/StaticBody3D3" index="0" unique_id=1734906945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0293235, 2.846988, 0.37338257)
+shape = SubResource("BoxShape3D_rbi34")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Stairs_grp/SM_StairsUp" index="2" unique_id=2085057266]
+transform = Transform3D(0.94997203, -0.31233492, 0, 0.31233492, 0.94997203, 0, 0, 0, 1, 2.5653634, 0.21768975, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_grp/SM_StairsUp/StaticBody3D2" index="0" unique_id=38336371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7756205, -0.07220483, 0.3284912)
+shape = SubResource("BoxShape3D_ri3uv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Stairs_grp/SM_StairsUp" index="3" unique_id=1058518913]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_grp/SM_StairsUp/StaticBody3D" index="0" unique_id=1142639951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0819812, -0.06333423, 0.39220315)
+shape = SubResource("BoxShape3D_isik4")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Stairs_grp/SM_StairsUp" index="4" unique_id=384632211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_grp/SM_StairsUp/StaticBody3D4" index="0" unique_id=750180249]
+transform = Transform3D(0.94942546, -0.31399244, 0, 0.31399244, 0.94942546, 0, 0, 0, 1, 8.023719, 4.818484, 0.32525635)
+shape = SubResource("BoxShape3D_sss74")
