@@ -449,13 +449,14 @@ func perform_wall_jump() -> void:
 # FACING
 
 func update_facing() -> void:
-	if velocity.x < 0.0:
-		facing_direction = -1.0
-		animated_sprite.flip_h = true
+	if not is_wall_sliding:
+		if velocity.x < 0.0:
+			facing_direction = -1.0
+			animated_sprite.flip_h = true
 
-	elif velocity.x > 0.0:
-		facing_direction = 1.0
-		animated_sprite.flip_h = false
+		elif velocity.x > 0.0:
+			facing_direction = 1.0
+			animated_sprite.flip_h = false
 
 
 # STATE CHANGES

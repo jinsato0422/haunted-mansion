@@ -12,7 +12,7 @@ script = ExtResource("1_0clfa")
 monster_scene = ExtResource("2_ucghm")
 
 [node name="Player" parent="." unique_id=896234555 instance=ExtResource("3_rltmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, -0.34376216)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
