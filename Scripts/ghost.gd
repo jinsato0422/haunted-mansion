@@ -5,10 +5,16 @@ extends Area3D
 
 var target: SidePlayer
 
+@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 func _process(delta: float) -> void:
 	if target == null:
 		return
+		
+	if target.position.x < global_position.x:
+		animated_sprite.flip_h = true
+	else:
+		animated_sprite.flip_h = false
 
 	global_position.x = move_toward(
 		global_position.x,
