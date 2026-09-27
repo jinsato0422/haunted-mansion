@@ -96,6 +96,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.0593987, -0.9576053)
 [connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]
 [connection signal="collected" from="Cursed Treasure" to="." method="_on_treasure_collected"]
 
-[editable path="Great Treasure"]
-[editable path="Cursed Treasure"]
 [editable path="SM_Hall_8M2"]
