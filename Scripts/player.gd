@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 
 signal died
+signal load_changed
 
 # MOVEMENT SETTINGS
 
@@ -50,8 +51,9 @@ signal died
 
 @export_category("Treasure")
 
-@export var treasure_count := 0
-@export var slowdown_per_treasure := 0.10
+# This is a full bar, no matter how big the level gets.
+@export_range(1.0, 1000.0, 1.0) var carry_capacity: float = 100.0
+var carried_load: float = 0.0
 @export var minimum_speed_multiplier := 0.40
 
 @export var movement_multiplier := 1.0
@@ -506,15 +508,9 @@ func exit_state(old_state: STATE) -> void:
 # TREASURE SPEED
 
 func get_speed_multiplier() -> float:
-	var load_factor: float = (
-		1.0
-		- treasure_count * slowdown_per_treasure
-	)
-
-	load_factor = maxf(
-		load_factor,
-		minimum_speed_multiplier
-	)
+	# More stuff in the bag means slower movement. A full bag uses our minimum speed.
+	var load_ratio := clampf(carried_load / maxf(carry_capacity, 1.0), 0.0, 1.0)
+	var load_factor := lerpf(1.0, minimum_speed_multiplier, load_ratio)
 
 	var multiplier: float = maxf(
 		movement_multiplier,
@@ -540,10 +536,11 @@ func get_run_speed() -> float:
 	return speed
 
 
-func update_treasure_speed(great_treasure_amount, movement_limiter) -> void:
-
-	treasure_count = great_treasure_amount
-	slowdown_per_treasure = movement_limiter
+func add_load(amount: float) -> void:
+	# Add the weight, but stop at a full bag.
+	carried_load = clampf(carried_load + maxf(amount, 0.0), 0.0, carry_capacity)
+	# Give the HUD a nudge so it animates to the new amount.
+	load_changed.emit()
 
 
 # ============================================================
@@ -580,9 +577,10 @@ func teleport_to(destination: Vector3) -> void:
 
 func reset_player() -> void:
 	is_dead = false
-	treasure_count = 0
+	carried_load = 0.0
 	movement_multiplier = 1.0
 	dash_multiplier = 1.0
+	load_changed.emit()
 	velocity = Vector3.ZERO
 	teleport_to(start_position)
 	change_state(STATE.IDLE)

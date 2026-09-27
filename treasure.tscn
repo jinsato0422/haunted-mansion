@@ -1,3 +1,4 @@
+[gd_scene format=3 uid="uid://by8siyt0j8pt1"]
 [gd_scene format=3 uid="uid://bx186o0mjyudh"]
 
 [ext_resource type="Script" uid="uid://2hoc4igxf8l5" path="res://Scripts/treasure.gd" id="1_dubxd"]
@@ -7,6 +8,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2unnm"]
 
+[node name="Treasure" type="Area3D" unique_id=2056213325]
 [node name="Treasure2" type="Area3D" unique_id=2056213325]
 collision_mask = 2
 script = ExtResource("1_dubxd")
