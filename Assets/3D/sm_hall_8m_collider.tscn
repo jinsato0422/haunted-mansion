@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bbhwlk4wp81kw" path="res://Assets/Materials/M_hall.tres" id="2_lveg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_770x4"]
-size = Vector3(7.9676514, 1, 1)
+size = Vector3(7.9676514, 0.2993164, 2.6004639)
 
 [node name="SM_Hall_8M" unique_id=2042900114 instance=ExtResource("1_t662k")]
 
@@ -12,11 +12,12 @@ size = Vector3(7.9676514, 1, 1)
 material_override = ExtResource("2_lveg6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hall_grp/SM_Hall_8M" index="0" unique_id=204596262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0038545132, 0, -0.03435397)
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hall_grp/SM_Hall_8M/StaticBody3D" index="0" unique_id=1852578018]
-transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 3.984314, -0.098523974, 0.33899117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.984314, -0.067640185, 0.3737347)
 shape = SubResource("BoxShape3D_770x4")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Hall_grp/SM_Hall_8M" index="1" unique_id=209104599]
@@ -26,5 +27,5 @@ collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hall_grp/SM_Hall_8M/StaticBody3D2" index="0" unique_id=1745723831]
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 3.984314, -0.098523974, 0.33899117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.984314, -0.17848301, 0.33899117)
 shape = SubResource("BoxShape3D_770x4")

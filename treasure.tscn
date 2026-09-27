@@ -19,6 +19,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.032101393, 0, 0.09707904)
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1334332930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.020817876)
+visible = false
 material_override = SubResource("StandardMaterial3D_2unnm")
 amount = 21
 speed_scale = 2.3

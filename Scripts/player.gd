@@ -163,7 +163,7 @@ func apply_gravity(delta: float) -> void:
 		velocity.y = 0.0
 
 func check_if_out_of_bounds():
-	if abs(position.y) >= 300.0 or abs(position.x) >= 300.0:
+	if position.y < -15.0:
 		reset_player()
 
 # STATE MACHINE
@@ -256,8 +256,12 @@ func run_state() -> void:
 func jump_state(delta: float) -> void:
 	is_wall_sliding = check_wall_slide()
 	
+	'if not is_wall_sliding:
+		if direction == -1:
+			animated_sprite.flip_h = true
+		elif direction == 1:
+			animated_sprite.flip_h = false'
 	
-
 	if is_wall_sliding:
 		animated_sprite.play("wall_slide")
 		if velocity.y < -wall_slide_fall_speed:
@@ -399,32 +403,32 @@ func move_air(delta: float) -> void:
 
 # WALL SLIDE
 
-func check_wall_slide() -> bool:
+'func check_wall_slide() -> bool:
 	wall_jump_direction = 0
-	if upper_right.is_colliding():
-		print("UR hit: ", upper_right.get_collider())
-
-	if lower_right.is_colliding():
-		print("LR hit: ", lower_right.get_collider())
-
-	if upper_left.is_colliding():
-		print("UL hit: ", upper_left.get_collider())
-
-	if lower_left.is_colliding():
-		print("LL hit: ", lower_left.get_collider())
 
 	# Right wall -> jump left.
 	if upper_right.is_colliding() or lower_right.is_colliding():
-		print("yayah")
 		wall_jump_direction = -1
 		return true
 
 	# Left wall -> jump right.
 	if upper_left.is_colliding() or lower_left.is_colliding():
-		print("yayah")
 		wall_jump_direction = 1
 		return true
 
+	return false'
+	
+func check_wall_slide():
+	if $WallCasts/UpperRight.is_colliding() or $WallCasts/LowerRight.is_colliding():
+		animated_sprite.play("wall_slide")
+		animated_sprite.flip_h = true
+		wall_jump_direction = -1
+		return true
+	if $WallCasts/UpperLeft.is_colliding() or $WallCasts/LowerLeft.is_colliding():
+		animated_sprite.play("wall_slide")
+		animated_sprite.flip_h = false
+		wall_jump_direction = 1
+		return true
 	return false
 
 
