@@ -7,10 +7,13 @@ signal collected(treasure_type: TreasureType)
 
 @export var treasure_type: TreasureType = TreasureType.MINOR
 
+var is_collected := false
+
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is SidePlayer:
-		monitoring = false # If this script is on the Area3D
+	if body is SidePlayer and not is_collected:
+		is_collected = true
+		set_deferred("monitoring", false)
 		$MoneyBagModel.hide()
 		collected.emit(treasure_type)
 
