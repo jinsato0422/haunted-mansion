@@ -254,16 +254,6 @@ func run_state() -> void:
 # ============================================================
 
 func jump_state(delta: float) -> void:
-	print("JUMP STATE | grab: ", Input.is_action_pressed("grab"),
-		" | UR: ", upper_right.is_colliding(),
-		" | LR: ", lower_right.is_colliding(),
-		" | UL: ", upper_left.is_colliding(),
-		" | LL: ", lower_left.is_colliding())
-	if Input.is_action_pressed("grab"):
-		print("Player: ", global_position)
-		print("UpperRight starts: ", upper_right.global_position)
-		print("UpperRight ends: ", upper_right.to_global(upper_right.target_position))
-		print("UpperRight mask: ", upper_right.collision_mask)
 	is_wall_sliding = check_wall_slide()
 	var is_wall_grabbing := is_wall_sliding and Input.is_action_pressed("grab")
 	
