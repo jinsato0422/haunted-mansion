@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6o4jim0xejx8"]
+
+[ext_resource type="Texture2D" uid="uid://n1tkrp1vkeut" path="res://Assets/Materials/TrimSheet_Low_openPBR_shader1_BaseColor.png" id="1_ubvwr"]
+[ext_resource type="Texture2D" uid="uid://8re6lddncf02" path="res://Assets/Materials/TrimSheet_Low_openPBR_shader1_Emissive.png" id="2_8ykyi"]
+[ext_resource type="Texture2D" uid="uid://dj1er20j6s2uq" path="res://Assets/Materials/TrimSheet_Low_openPBR_shader1_Roughness.png" id="2_mp5ws"]
+
+[resource]
+albedo_texture = ExtResource("1_ubvwr")
+roughness_texture = ExtResource("2_mp5ws")
+emission_enabled = true
+emission_texture = ExtResource("2_8ykyi")

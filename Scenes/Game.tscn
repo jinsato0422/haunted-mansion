@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://byl4pywlkquac" path="res://Scenes/ghost.tscn" id="2_ucghm"]
 [ext_resource type="PackedScene" uid="uid://0wdgmqfou2gp" path="res://Scenes/player.tscn" id="3_rltmn"]
 [ext_resource type="PackedScene" uid="uid://bheme71kyujx6" path="res://Scenes/treasure.tscn" id="4_yfthy"]
-[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_collider.tscn" id="5_ucghm"]
+[ext_resource type="PackedScene" uid="uid://c1hh734lrbs6f" path="res://Assets/3D/sm_hall_8m_Green.tscn" id="5_ucghm"]
+[ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_track"]
@@ -37,14 +38,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, -0.34376216)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
 
 [node name="Minor Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -0.7043371)
 
 [node name="Great Treasure" parent="." unique_id=510207290 instance=ExtResource("4_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.45352, 1.2649193, -0.7950076)
 treasure_type = 1
 
 [node name="Cursed Treasure" parent="." unique_id=298225106 instance=ExtResource("4_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.713743, 9.168175, -0.06824756)
 treasure_type = 2
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=361460300]
@@ -107,7 +108,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 19, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Light" parent="." unique_id=1034226516 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.5018725, -0.89392495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.879162, 2.1391528, -0.89392495)
 
 [node name="SM_Hall_8M3" parent="." unique_id=1454369697 instance=ExtResource("5_ucghm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -119,10 +120,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3, -1)
 
 [node name="Light2" parent="." unique_id=440837327 instance=ExtResource("7_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.3747528, -0.95481086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.0887718, -0.95481086)
 
 [node name="Light3" parent="." unique_id=2093226375 instance=ExtResource("7_yfthy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.681894, 7.8465567, -0.84413815)
+
+[node name="SM_Hall_8M6" parent="." unique_id=1366289080 instance=ExtResource("7_fgofq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.004677, 0, -1.0370255)
+
+[node name="Light4" parent="." unique_id=1864372025 instance=ExtResource("7_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.780283, 2.1782231, -1.0223402)
+
+[node name="SM_Hall_8M_Green" parent="." unique_id=1982856573 instance=ExtResource("5_ucghm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -1)
+
+[node name="Light5" parent="." unique_id=131363763 instance=ExtResource("7_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 2.0593987, -0.9576053)
 
 [connection signal="collected" from="Minor Treasure" to="." method="_on_treasure_collected"]
 [connection signal="collected" from="Great Treasure" to="." method="_on_treasure_collected"]

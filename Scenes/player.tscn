@@ -63,13 +63,13 @@ region = Rect2(800, 161, 160, 161)
 atlas = ExtResource("2_6t5aa")
 region = Rect2(0, 644, 160, 161)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_6t5aa")
-region = Rect2(160, 644, 160, 161)
+region = Rect2(160, 652, 160, 129)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
-region = Rect2(320, 644, 160, 161)
+region = Rect2(320, 640, 160, 114)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
 atlas = ExtResource("3_vgqql")
@@ -203,14 +203,14 @@ animations = [{
 "texture": SubResource("AtlasTexture_qqcod")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_igrcy")
+"texture": SubResource("AtlasTexture_6t5aa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fs7ks")
+"texture": SubResource("AtlasTexture_vgqql")
 }],
 "loop": 0,
 "name": &"slide",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,12 +286,11 @@ monitorable = false
 shape = SubResource("SphereShape3D_ir4nge")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=718450221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06767738, 0)
 no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_770x4")
-animation = &"falling"
+animation = &"slide"
 autoplay = "idle"
-frame_progress = 0.22309789
+frame_progress = 1.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1823546937]
 transform = Transform3D(1, 0, 0, 0, 0.97199607, 0.23499715, 0, -0.23499715, 0.97199607, 0, 1.7359571, 6.488817)

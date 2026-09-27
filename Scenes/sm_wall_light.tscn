@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cdk6sapxl5n4p"]
+
+[ext_resource type="PackedScene" uid="uid://d2lug08s13bk7" path="res://Assets/3D/SM_WallLight.fbx" id="1_4ssfm"]
+[ext_resource type="Material" uid="uid://2x7cqj6scapk" path="res://Assets/Materials/Grey.tres" id="2_dml88"]
+
+[node name="SM_WallLight" unique_id=1659775570 instance=ExtResource("1_4ssfm")]
+
+[node name="SM_WallLight" parent="." index="0" unique_id=997375189]
+surface_material_override/0 = ExtResource("2_dml88")
