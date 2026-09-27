@@ -254,17 +254,30 @@ func run_state() -> void:
 # ============================================================
 
 func jump_state(delta: float) -> void:
+	print("JUMP STATE | grab: ", Input.is_action_pressed("grab"),
+		" | UR: ", upper_right.is_colliding(),
+		" | LR: ", lower_right.is_colliding(),
+		" | UL: ", upper_left.is_colliding(),
+		" | LL: ", lower_left.is_colliding())
+	if Input.is_action_pressed("grab"):
+		print("Player: ", global_position)
+		print("UpperRight starts: ", upper_right.global_position)
+		print("UpperRight ends: ", upper_right.to_global(upper_right.target_position))
+		print("UpperRight mask: ", upper_right.collision_mask)
 	is_wall_sliding = check_wall_slide()
-	
+	var is_wall_grabbing := is_wall_sliding and Input.is_action_pressed("grab")
 	
 
 	if is_wall_sliding:
-		animated_sprite.play("wall_slide")
-		if velocity.y < -wall_slide_fall_speed:
+		if is_wall_grabbing:
+			velocity.x = 0.0
+			velocity.y = 0.0
+		elif velocity.y < -wall_slide_fall_speed:
 			velocity.y = -wall_slide_fall_speed
 
 		if Input.is_action_just_pressed("jump"):
 			perform_wall_jump()
+			is_wall_grabbing = false
 	else:
 		if velocity.y < 0:
 			animated_sprite.play("falling")
@@ -284,7 +297,8 @@ func jump_state(delta: float) -> void:
 		if velocity.y > 0.0:
 			velocity.y *= jump_cut_multiplier
 
-	move_air(delta)
+	if not is_wall_grabbing:
+		move_air(delta)
 
 	if is_on_floor():
 		change_state(STATE.IDLE)

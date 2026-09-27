@@ -77,3 +77,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, 3)
 
 [editable path="Treasure2"]
 [editable path="Treasure3"]
+[editable path="SM_Hall_8M2"]
