@@ -14,7 +14,8 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is SidePlayer and not is_collected:
 		is_collected = true
 		set_deferred("monitoring", false)
-		$MoneyBagModel.hide()
+		
+		hide()
 		collected.emit(treasure_type)
 
 		$CPUParticles3D.restart()
