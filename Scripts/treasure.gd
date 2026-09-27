@@ -9,16 +9,29 @@ signal collected(treasure_type: TreasureType)
 
 var is_collected := false
 
+func _ready() -> void:
+	pass
+		
+
+func reset():
+	is_collected = false
+	visible = true
+	
+	
+func set_treasure_type():
+	match treasure_type:
+		pass
+
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is SidePlayer and not is_collected:
 		is_collected = true
 		set_deferred("monitoring", false)
 		
-		hide()
+		visible = false
 		collected.emit(treasure_type)
 
 		$CPUParticles3D.restart()
 		$CPUParticles3D.emitting = true
 		await $CPUParticles3D.finished
-		queue_free()
+		#queue_free()

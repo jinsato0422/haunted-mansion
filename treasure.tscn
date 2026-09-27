@@ -28,9 +28,7 @@ initial_velocity_max = 792.08
 angular_velocity_min = -417.38
 angular_velocity_max = 499.01
 
-[node name="Cursed" type="Node3D" parent="." unique_id=249043489]
-
-[node name="Book_OB_UnText" parent="Cursed" unique_id=1952639841 instance=ExtResource("2_h85lg")]
+[node name="Book" parent="." unique_id=1952639841 instance=ExtResource("2_h85lg")]
 transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

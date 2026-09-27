@@ -39,6 +39,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.154901, -0.34376216)
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=855183779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 6)
 
+[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -0.6623316)
+treasure_type = null
+
 [node name="Treasures" type="Node3D" parent="." unique_id=850540396]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=361460300]
@@ -157,8 +161,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 7, -1)
 
 [node name="SM_Hall_8M_Green5" parent="." unique_id=1119351235 instance=ExtResource("5_ucghm")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 40, -17, -1)
-
-[node name="Treasure" parent="." unique_id=2056213325 instance=ExtResource("4_yfthy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -0.6623316)
 
 [editable path="SM_Hall_8M2"]
