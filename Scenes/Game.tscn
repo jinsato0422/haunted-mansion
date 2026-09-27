@@ -8,6 +8,25 @@
 [ext_resource type="PackedScene" uid="uid://du054ww1x5832" path="res://Assets/3D/sm_hall_8m_Grey.tscn" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://cambo0qm4fntl" path="res://Scenes/light.tscn" id="7_yfthy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_track"]
+bg_color = Color(0.09, 0.07, 0.12, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.57, 0.45, 0.27, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_load_fill"]
+bg_color = Color(0.95, 0.66, 0.22, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+
 [node name="MainSide" type="Node3D" unique_id=1572557826]
 script = ExtResource("1_0clfa")
 monster_scene = ExtResource("2_ucghm")
@@ -44,6 +63,37 @@ offset_top = 23.0
 offset_right = 185.0
 offset_bottom = 46.0
 text = "Speed: 5"
+
+[node name="LoadPanel" type="MarginContainer" parent="HUD"]
+offset_left = 32.0
+offset_top = 58.0
+offset_right = 352.0
+offset_bottom = 118.0
+mouse_filter = 2
+
+[node name="Rows" type="VBoxContainer" parent="HUD/LoadPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="LoadLabel" type="Label" parent="HUD/LoadPanel/Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.96, 0.87, 0.69, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+text = "CARRY LOAD"
+
+[node name="LoadBar" type="ProgressBar" parent="HUD/LoadPanel/Rows"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_load_track")
+theme_override_styles/fill = SubResource("StyleBoxFlat_load_fill")
+max_value = 100.0
+step = 0.001
+show_percentage = false
 
 [node name="GhostSpawn" type="Marker3D" parent="." unique_id=986402798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 0)
