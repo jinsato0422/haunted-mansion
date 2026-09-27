@@ -140,6 +140,8 @@ animations = [{
 }]
 
 [node name="Ghost" type="Area3D" unique_id=265302351]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_v5pp4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=816244765]
@@ -155,6 +157,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 no_depth_test = true
 sprite_frames = SubResource("SpriteFrames_770x4")
 autoplay = "default"
-frame_progress = 0.82577604
+frame_progress = 0.49466544
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

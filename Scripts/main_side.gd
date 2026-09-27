@@ -16,6 +16,9 @@ var load_tween: Tween
 @onready var load_bar: ProgressBar = $HUD/LoadPanel/Rows/LoadBar
 @onready var ghost_spawn: Marker3D = $GhostSpawn
 
+
+
+
 func _ready() -> void:
 	register_treasures(self)
 	# Whenever the player gains or loses load, refresh the bar.
@@ -23,6 +26,7 @@ func _ready() -> void:
 	load_bar.max_value = player.carry_capacity
 	load_bar.value = player.carried_load
 	update_hud()
+	
 
 func register_treasures(node: Node) -> void:
 	# Hook up the treasures placed in the level, including ones inside other nodes.

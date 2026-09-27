@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2hoc4igxf8l5" path="res://Scripts/treasure.gd" id="1_dubxd"]
 [ext_resource type="PackedScene" uid="uid://berb2n1xwmcet" path="res://Assets/3D/MoneyBag_Ob-Unfinished.glb" id="2_h85lg"]
+[ext_resource type="PackedScene" uid="uid://di5u0nn8vu367" path="res://Assets/Treasures/Cursed/book_ob_un_text.tscn" id="3_pdkc3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2unnm"]
 
@@ -39,7 +40,19 @@ color = Color(1, 0.82643825, 0.8691225, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=93178961]
 shape = SubResource("SphereShape3D_2bngr")
 
-[node name="MoneyBagModel" parent="." unique_id=1918214693 instance=ExtResource("2_h85lg")]
+[node name="Minor" type="Node3D" parent="." unique_id=873529768]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.032101393, 0, 0.09707904)
+visible = false
+
+[node name="MoneyBagModel" parent="Minor" unique_id=1918214693 instance=ExtResource("2_h85lg")]
+
+[node name="Greater" type="Node3D" parent="." unique_id=1413489042]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.032101393, 0, 0.09707904)
+
+[node name="Cursed" type="Node3D" parent="." unique_id=1636043899]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.032101393, 0, 0.09707904)
+
+[node name="Book_OB_UnText" parent="Cursed" unique_id=1952639841 instance=ExtResource("3_pdkc3")]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
