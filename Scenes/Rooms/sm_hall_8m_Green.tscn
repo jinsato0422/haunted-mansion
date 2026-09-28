@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://c1hh734lrbs6f"]
 
-[ext_resource type="PackedScene" uid="uid://ce0diagqlvfs4" path="res://Assets/3D/SM_Hall_8M.fbx" id="1_t662k"]
-[ext_resource type="Material" uid="uid://c6o4jim0xejx8" path="res://Assets/Materials/green_tattered.tres" id="2_lveg6"]
+[ext_resource type="PackedScene" uid="uid://ce0diagqlvfs4" path="res://Assets/3D/SM_Hall_8M.fbx" id="1_e7bf4"]
+[ext_resource type="Material" uid="uid://c6o4jim0xejx8" path="res://Assets/Materials/green_tattered.tres" id="2_c7klv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_770x4"]
 size = Vector3(7.9676514, 0.2993164, 2.6004639)
 
-[node name="SM_Hall_8M_Green" unique_id=2042900114 instance=ExtResource("1_t662k")]
+[node name="SM_Hall_8M_Green" unique_id=2042900114 instance=ExtResource("1_e7bf4")]
 
 [node name="SM_Hall_8M" parent="Hall_grp" parent_id_path=PackedInt32Array(90706149) index="0" unique_id=112162706]
-material_override = ExtResource("2_lveg6")
+material_override = ExtResource("2_c7klv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hall_grp/SM_Hall_8M" index="0" unique_id=204596262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0038545132, 0, -0.03435397)
